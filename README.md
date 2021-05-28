@@ -1,2 +1,2 @@
 # myBlog
-My own multi language  blog created using Laravel + Livewire +  Tailwind CSS + Laravel Voyager
+My own multi language  blog created using Laravel + Livewire + Alpine JS + Tailwind CSS + Laravel Voyager
