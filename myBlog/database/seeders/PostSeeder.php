@@ -20,9 +20,9 @@ class PostSeeder extends Seeder
           "fr" => 'Super article traduit'
         ];
 
-        $post01['slug'] = 'awesome-translated-post';
+        $post01['image'] = 'https://cms-assets.tutsplus.com/uploads/users/769/posts/25334/preview_image/get-started-with-laravel-6-400x277.png';
 
-        $post01['content'] = [
+        $post01['body'] = [
           "en" => 'Awesome translated post',
           "ar" => 'مشاركة مترجمة رائعة',
           "fr" => 'Super article traduit'

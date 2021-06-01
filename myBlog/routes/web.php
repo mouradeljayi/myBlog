@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LocaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/change-language/{locale}', [LocaleController::class, 'switch'])->name('switchLang');
+
+Route::middleware(['localized'])->prefix(app()->getLocale())->group(function () {
+  Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+});
