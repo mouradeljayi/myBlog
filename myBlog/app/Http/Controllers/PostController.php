@@ -13,4 +13,10 @@ class PostController extends Controller
       return view('posts.index', compact('posts'));
     }
 
+    public function show($post)
+    {
+      $post = Post::where('slug->' . app()->getLocale(), $post)->first();
+      return view('posts.show', compact('post'));
+    }
+
 }

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -37,16 +38,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
-        $locale = \request()->segment(1);
-
-        $this->routes(function () use ($locale) {
+        $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
-                ->prefix($locale)
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });

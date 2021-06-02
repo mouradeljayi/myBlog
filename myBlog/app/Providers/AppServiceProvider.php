@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        app()->setLocale(request()->segment(1));
+        $locale = config('locales.fallback_locale');
+        App::setLocale($locale);
+        Lang::setLocale($locale);
+        Session::put('locale', $locale);
+        //Carbon::setlocale($locale);
     }
 }

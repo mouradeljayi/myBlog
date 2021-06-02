@@ -3,17 +3,16 @@
 @section('content')
 
 <main class="container mx-auto px-6 mt-20">
-  <h2 class="text-left text-white text-2xl mt-4">Single posts</h2>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mt-6">
-    <a href="#">
-      <div class="bg-white rounded p-4">
-        <img src="{{ asset('images/laravel_image.png') }}">
-        <h4 class="font-bold mt-2">Introduction to PHP Laravel Framework</h4>
-        <h6 class="text-sm"><i class="fas fa-user-edit"></i> By Mourad EL Jayi</h6>
-        <small class="text-sm"><i class="fas fa-clock"></i> 10 Days ago</small>
-      </div>
-    </a>
+  <a href="{{ route('posts.index') }}" class="text-white"> <i class="fas fa-chevron-left"></i> Return Back</a>
+  <h2 class="text-left text-white text-4xl mt-4">{{ $post->title }}</h2>
+  <img src="{{ $post->image }}" class="mt-6" alt="{{ $post->title }}">
+  <div class="flex text-green-500  mt-2">
+    <small><i class="fas fa-user-edit"></i> Mourad EL Jayi</small> <span class="ml-4">|</span>
+    <small class="ml-4"><i class="fas fa-clock"></i> {{ $post->created_at->diffForHumans() }}</small>
   </div>
+  <article class="mt-8 text-white">
+    <p>{{ $post->body }}</p>
+  </article>
 </main>
 
 @endsection

@@ -23,7 +23,7 @@
   <section class="mt-20 border-t border-white">
     <h2 class="text-left text-white text-2xl mt-4">Latest posts</h2>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-4 mt-6">
-      <a href="#">
+      <a href="">
         <div class="bg-white rounded p-4">
           <img src="{{ asset('images/laravel_image.png') }}">
           <h4 class="font-bold mt-2">Introduction to PHP Laravel Framework</h4>
