@@ -2,40 +2,36 @@
 
 @section('content')
 
-<main class="container mx-auto px-6 mt-20">
-  <section class="text-center text-white border border-green-500 p-8">
-    <h1 class="text-2xl mb-5 md:text-4xl tracking-widest">WELCOME TO MOURAD ELJAYI'S BLOG</h1>
-    <p class="text-2xl mb-5">Where you will find various articles related to Programming & Web Development !</p>
-    <a href="" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4">START READING</a>
-  </section>
-
+<main class="mt-28">
   <section class="mt-20 flex flex-col md:flex-row text-white md:justify-center md:items-center">
-    <div class="w-full md:w-1/2">
+    <div class="">
       <img src="{{ asset('images/spring.jpg') }}">
     </div>
-    <div class="mr-0 md:ml-4">
+    <div class="ml-4 mr-4 mt-4">
       <h1 class="uppercase text-2xl md:text-4xl">Framework Spring boot</h1>
       <p class="text-xl md:text-2xl mb-4 md:mb-10">The best JAVA Framework ?</p>
-      <a href="" class="text-green-500 uppercase hover:text-green-700">View the post <i class="fas fa-chevron-right"></i> </a>
+      <a href="" class="text-white bg-green-500 px-4 py-1 uppercase hover:bg-green-700">{{ __('posts.read_post') }} <i class="fas {{ __('posts.chevron') }}"></i> </a>
     </div>
   </section>
+  <div class="border-t border-white mt-10"></div>
 
-  <section class="mt-20 border-t border-white">
-    <h2 class="text-left text-white text-2xl mt-4">Latest posts</h2>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-4 mt-6">
-      <a href="">
-        <div class="bg-white rounded p-4">
-          <img src="{{ asset('images/laravel_image.png') }}">
-          <h4 class="font-bold mt-2">Introduction to PHP Laravel Framework</h4>
-          <h6 class="text-sm"><i class="fas fa-user-edit"></i> By Mourad EL Jayi</h6>
-          <small class="text-sm"><i class="fas fa-clock"></i> 10 Days ago</small>
+  <section class="container mx-auto px-8">
+    <h2 class="text-3xl text-center text-green-500 mt-6 mb-6 uppercase">{{ __('posts.latest_posts') }}</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mt-6">
+      @foreach($posts as $post)
+      <a href="{{ route('posts.show', $post) }}">
+        <div class="shadow-lg">
+          <img src="{{ $post->image }}" alt="{{ $post->title }}">
+          <div class="bg-gray-200 p-4">
+            <h4 class="text-xl font-bold">{{ $post->title }}</h4>
+            <h6 class="text-sm mt-4"><i class="fas fa-user-edit"></i> {{ __('posts.author') }}</h6>
+            <small class="text-sm"><i class="fas fa-clock"></i> {{ $post->created_at->diffForHumans() }}</small>
+          </div>
         </div>
       </a>
+      @endforeach
     </div>
   </section>
-  <div class="flex justify-end mt-2">
-    <a href="" class="text-green-500 hover:text-green-700 font-bold">Show more</a>
-  </div>
 </main>
 
 @endsection

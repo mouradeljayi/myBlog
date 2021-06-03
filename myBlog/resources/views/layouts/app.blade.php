@@ -8,20 +8,20 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         <link href="/css/app.css" rel="stylesheet">
         <style>
           body {
-            font-family: 'Bai Jamjuree', sans-serif;
+            font-family: 'Cairo', sans-serif;
           }
         </style>
     </head>
     <body class="bg-gray-800 mb-20">
-        <div class="w-full text-gray-700 bg-white shadow-lg">
+        <div class="w-full text-gray-700 bg-white shadow-lg fixed inset-x-0 top-0 z-20">
           <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="p-4 flex flex-row items-center justify-between">
-              <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi |<span class="text-green-600">Blog</span> </a>
+              <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi <i class="fas fa-ellipsis-v"></i> <span class="text-green-600 text-xl">Blog</span> </a>
               <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                   <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -30,21 +30,21 @@
               </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-              <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'welcome' ? 'text-gray-900 bg-gray-200' : '' }}" href="/">Home</a>
-              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'posts.index' ? 'text-gray-900 bg-gray-200' : '' }}" href="{{ route('posts.index') }}">Blog</a>
-              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
-              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contact</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'welcome' ? 'text-gray-900 bg-green-500' : '' }}" href="/">{{ __('posts.home') }}</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'posts.index' || \Route::currentRouteName() === 'posts.show' ? 'text-gray-900 bg-green-500' : '' }}" href="{{ route('posts.index') }}">{{ __('posts.blog') }}</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">{{ __('posts.about') }}</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">{{ __('posts.contact') }}</a>
               <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                  <span>{{ config('locales.languages')[app()->getLocale()]['name'] }}</span>
+                  <span>{{ config('locales.languages')[app()->getLocale()]['name'] }} </span>
                   <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute {{ config('locales.languages')[app()->getLocale()]['name'] === "الدارجة" ? 'left-0' : 'right-0'  }} w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                   <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                     @foreach(config('locales.languages') as $key => $val)
                     @if($key != app()->getLocale())
                     <a href="{{ route('switchLang', $key) }}" class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                      <div class="flex items-center justify-between">{{ $val['name'] }}</div>
+                      <div class="flex items-center justify-between">{{ $val['name'] }} <img src="{{ asset('flags/' . $val['icon']) }}" alt="{{ $val['name'] }}" class="w-5"> </div>
                     </a>
                     @endif
                     @endforeach

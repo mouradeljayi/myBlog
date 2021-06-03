@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LocaleController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\LocaleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Post::latest()->take(4)->get();
+    return view('welcome', compact('posts'));
 })->name('welcome');
 
 Route::get('/change-language/{locale}', [LocaleController::class, 'switch'])->name('switchLang');
@@ -24,4 +26,6 @@ Route::get('/change-language/{locale}', [LocaleController::class, 'switch'])->na
 Route::group(['middleware' => 'web'], function () {
   Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
   Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
+  Route::get('/blog/post/create', [PostController::class, 'create'])->name('posts.create');
+  Route::post('/blog/post/store', [PostController::class, 'store'])->name('posts.store');
 });
