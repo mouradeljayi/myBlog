@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use App\Models\Post;
 
 /*
@@ -28,4 +30,12 @@ Route::group(['middleware' => 'web'], function () {
   Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
   Route::get('/blog/post/create', [PostController::class, 'create'])->name('posts.create');
   Route::post('/blog/post/store', [PostController::class, 'store'])->name('posts.store');
+  Route::get('/blog/post/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
+  Route::put('/blog/post/update/{post}', [PostController::class, 'update'])->name('posts.update');
+  Route::delete('/blog/post/delete{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
+
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/admin/zoro/signIn', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/admin/zoro/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');

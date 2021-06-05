@@ -7,6 +7,10 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth')->except(['index', 'show']);
+    }
     public function index()
     {
       $posts = Post::latest()->get();
@@ -22,6 +26,26 @@ class PostController extends Controller
     public function create()
     {
       return view('posts.create');
+    }
+
+    public function store()
+    {
+
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
     }
 
 }
