@@ -22,25 +22,32 @@
       </div>
     </div>
   </header>
-  <section class="pb-6 md:pb-0 flex flex-col md:flex-row text-white md:justify-center md:items-center border border-white">
-    <div>
-      <img src="{{ asset('images/laravel_image.png') }}">
-    </div>
-    <div class="ml-4 mr-4 mt-4">
-      <h1 class="uppercase text-xl md:text-3xl">Introduction to Laravel Framework</h1>
-      <p class="text-base md:text-xl mb-4 md:mb-10">Laravel is one of the best PHP Framework for building server-side web application...</p>
-      <a href="" class="text-white bg-green-500 px-4 py-1 uppercase hover:bg-green-700">{{ __('posts.read_post') }} <i class="fas {{ __('posts.chevron') }}"></i> </a>
-    </div>
-  </section>
+  @if($last_post)
+    <section class="pb-6 md:pb-0 flex flex-col md:flex-row text-white md:justify-center md:items-center border border-white">
+      <div>
+        <img src="{{ asset('/images/posts/' . $last_post->image) }}" alt="{{ $last_post->title }}">
+      </div>
+      <div class="ml-4 mr-4 mt-4">
+        <h1 class="uppercase text-xl md:text-3xl">{{ $last_post->title }}</h1>
+        <p class="text-base md:text-xl mb-4 md:mb-10">{{ Str::limit($last_post->body, 50) }}</p>
+        <a href="{{ route('posts.show', $last_post) }}" class="text-white bg-green-500 px-4 py-1 uppercase hover:bg-green-700">{{ __('posts.read_post') }} <i class="fas {{ __('posts.chevron') }}"></i> </a>
+      </div>
+    </section>
+  @else
+    <section class="mt-20 text-white text-center">
+      NO POSTS FOR THE MOMENT !
+    </section>
+  @endif
 
 
+@if($posts->count() > 0)
   <section class="container mx-auto px-8">
     <h2 class="text-3xl text-center text-green-500 mt-6 mb-6 uppercase">{{ __('posts.latest_posts') }}</h2>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mt-6">
       @foreach($posts as $post)
       <a href="{{ route('posts.show', $post) }}">
-        <div class="shadow-lg hover:border-green-500 transform hover:scale-90">
-          <img src="{{ $post->image }}" alt="{{ $post->title }}">
+        <div class="shadow-lg transform hover:scale-90">
+          <img src="{{ asset('/images/posts/' . $post->image) }}" alt="{{ $post->title }}">
           <div class="bg-gray-200 p-4">
             <h4 class="text-xl font-bold">{{ $post->title }}</h4>
             <h6 class="text-sm mt-4"><i class="fas fa-user-edit"></i> {{ __('posts.author') }}</h6>
@@ -50,7 +57,11 @@
       </a>
       @endforeach
     </div>
+    <div class="mt-5">
+    <a href="{{ route('posts.index') }}" class="text-green-600">{{  __('posts.show_more')}}</a>
+    </div>
   </section>
+@endif
 </main>
 
 

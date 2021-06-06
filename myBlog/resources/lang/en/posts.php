@@ -3,6 +3,11 @@
 return [
 
   'latest_posts'          => 'Latest posts',
+  'title'                 => 'Title',
+  'body'                  => 'Body',
+  'created_successfully'  => 'Post created successfully',
+  'updated_successfully'  => 'Post updated successfully',
+  'deleted_successfully'  => 'Post deleted successfully',
   'all_posts'             => 'All postes',
   'home'                  => 'Home',
   'blog'                  => 'Blog',

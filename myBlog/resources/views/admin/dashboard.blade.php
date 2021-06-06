@@ -28,10 +28,10 @@
                   <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
                     <div class="flex justify-center items-center text-white">
                       <a href="{{ route('posts.edit', $post) }}" class="bg-green-500 py-1 px-2"> <i class="fas fa-edit"></i> </a>
-                      <form action="{{ route('posts.destroy', $post) }}" method="post">
+                      <form action="{{ route('posts.destroy', $post) }}" method="post" class="ml-4 mr-2">
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="bg-green-500 ml-4 py-1 px-2"> <i class="fas fa-trash"></i> </button>
+                      <button type="submit" class="bg-green-500 py-1 px-2"> <i class="fas fa-trash"></i> </button>
                     </form>
                   </div>
               </td>
@@ -40,6 +40,13 @@
           </tbody>
       </table>
   </div>
+{{-- <div class="bg-gray-200 mt-40 container mx-auto px-20 p-20 flex justify-center">
+  <div class="mt-4 border-2 border-green-500 p-10 relative">
+    <i class="fas fa-graduation-cap absolute right-4 top-6 rotation-icon text-green-600 fa-2x"></i>
+    <a href="/" class="text-5xl font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi <i class="fas fa-ellipsis-v fa-lg"></i> <span class="text-green-600 text-6xl">Blog</span> </a>
+  </div>
+</div>
+ --}}
 
 </main>
 

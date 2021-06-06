@@ -3,6 +3,11 @@
 return [
 
   'latest_posts'          => 'أحدث المقالات',
+  'title'                 => 'العنوان',
+  'body'                  => 'المحتوى',
+  'created_successfully'  => 'تم إضافة المقال بنجاح',
+  'updated_successfully'  => 'تم تعديل المقال بنجاح',
+  'deleted_successfully'  => 'تم حذف المقال بنجاح',
   'all_posts'             => 'جميع المقالات',
   'home'                  => 'الرئيسية',
   'blog'                  => 'المدونة',

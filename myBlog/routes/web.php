@@ -19,8 +19,12 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
+    $last_post = Post::latest()->first();
     $posts = Post::latest()->take(4)->get();
-    return view('welcome', compact('posts'));
+    return view('welcome', [
+      'posts' => $posts,
+      'last_post' => $last_post
+    ]);
 })->name('welcome');
 
 Route::get('/change-language/{locale}', [LocaleController::class, 'switch'])->name('switchLang');
@@ -30,9 +34,9 @@ Route::group(['middleware' => 'web'], function () {
   Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
   Route::get('/blog/post/create', [PostController::class, 'create'])->name('posts.create');
   Route::post('/blog/post/store', [PostController::class, 'store'])->name('posts.store');
-  Route::get('/blog/post/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
-  Route::put('/blog/post/update/{post}', [PostController::class, 'update'])->name('posts.update');
-  Route::delete('/blog/post/delete{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+  Route::get('/blog/post/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+  Route::put('/blog/post/{post}/update', [PostController::class, 'update'])->name('posts.update');
+  Route::delete('/blog/post/{post}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
