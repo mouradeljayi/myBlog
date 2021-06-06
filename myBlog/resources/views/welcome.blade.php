@@ -29,7 +29,9 @@
       </div>
       <div class="ml-4 mr-4 mt-4">
         <h1 class="uppercase text-xl md:text-3xl">{{ $last_post->title }}</h1>
-        <p class="text-base md:text-xl mb-4 md:mb-10">{{ Str::limit($last_post->body, 50) }}</p>
+        <div class=" mb-5 md:mb-10">
+          <p class="text-base md:text-xl">{!! Str::limit($last_post->body, 50) !!}</p>
+        </div>
         <a href="{{ route('posts.show', $last_post) }}" class="text-white bg-green-500 px-4 py-1 uppercase hover:bg-green-700">{{ __('posts.read_post') }} <i class="fas {{ __('posts.chevron') }}"></i> </a>
       </div>
     </section>

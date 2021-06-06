@@ -39,7 +39,7 @@ Route::group(['middleware' => 'web'], function () {
   Route::delete('/blog/post/{post}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/zoroDashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/admin/zoro/signIn', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/admin/zoro/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');

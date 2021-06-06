@@ -28,11 +28,11 @@
                   <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
                     <div class="flex justify-center items-center text-white">
                       <a href="{{ route('posts.edit', $post) }}" class="bg-green-500 py-1 px-2"> <i class="fas fa-edit"></i> </a>
-                      <form action="{{ route('posts.destroy', $post) }}" method="post" class="ml-4 mr-2">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="bg-green-500 py-1 px-2"> <i class="fas fa-trash"></i> </button>
-                    </form>
+                      <a class="bg-red-500 ml-4 mr-4 py-1 px-2" href="javascript:void(0);" onclick="if (confirm('Are you sure?')) { document.getElementById('delete-post-{{ $post->id }}').submit(); } else { return false; }"><i class="fas fa-trash"></i></a>
+                      <form action="{{ route('posts.destroy', $post) }}" method="post" id="delete-post-{{ $post->id }}" >
+                        @csrf
+                        @method('DELETE')
+                      </form>
                   </div>
               </td>
             </tr>

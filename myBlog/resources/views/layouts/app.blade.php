@@ -35,7 +35,7 @@
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
               <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'welcome' ? 'text-gray-900 bg-green-500' : '' }}" href="/">{{ __('posts.home') }}</a>
-              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'posts.index' || \Route::currentRouteName() === 'posts.show' ? 'text-gray-900 bg-green-500' : '' }}" href="{{ route('posts.index') }}">{{ __('posts.blog') }}</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 md:mr-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ \Route::currentRouteName() === 'posts.index' || \Route::currentRouteName() === 'posts.show' ? 'text-gray-900 bg-green-500' : '' }}" href="{{ route('posts.index') }}">{{ __('posts.blog') }}</a>
               <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">{{ __('posts.about') }}</a>
               <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">{{ __('posts.contact') }}</a>
               <button class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-green-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline {{ config('locales.languages')[app()->getLocale()]['name'] === 'الدارجة' ? 'text-right' : 'text-left' }} modal-open"><i class="fa fa-search"></i></button>
@@ -81,7 +81,7 @@
             <div class="modal-content py-10 text-left px-6">
               <!--Title-->
               <div class="flex justify-between items-center pb-3">
-                <p class="text-2xl font-bold">Search for a post</p>
+                <p class="text-2xl font-bold">{{ __('posts.search') }}</p>
                 <div class="modal-close cursor-pointer z-50">
                   <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                     <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -91,7 +91,7 @@
 
               <!--Body-->
               <form class="flex mt-4 lg:mt-0">
-                <input type="text" class="border border-green-500 py-1 px-2 w-80 lg:w-96 focus:outline-none focus:border-green-600" placeholder="Type your words">
+                <input type="text" class="border border-green-500 py-2 px-2 w-80 lg:w-96 focus:outline-none focus:border-green-600">
                 <button class="border-t border-r border-b border-green-500 py-1 px-6 bg-green-500 hover:bg-green-600 focus:outline-none"> <i class="fas fa-search text-gray-900"></i> </button>
               </form>
 

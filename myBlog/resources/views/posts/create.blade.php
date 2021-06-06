@@ -28,7 +28,7 @@
         <label class="block text-gray-700 text-sm font-bold mb-2">
           Body ({{ $key }})
         </label>
-        <textarea name="body[{{ $key }}]" rows="20" cols="80" class="text-xl shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('body.' . $key) }}</textarea>
+        <textarea name="body[{{ $key }}]" rows="20" cols="80" class="text-lg shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('body.' . $key) }}</textarea>
       </div>
       @endforeach
 

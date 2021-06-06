@@ -14,8 +14,8 @@
     <small><i class="fas fa-user-edit"></i> Mourad EL Jayi</small> <i class="fas fa-ellipsis-v ml-4 mr-4"></i>
      <small><i class="fas fa-clock"></i> {{ $post->created_at->diffForHumans() }}</small>
   </div>
-  <article class="mt-8 text-white">
-    <p contenteditable="true" class="tracking-wide	">{{ $post->body }}</p>
+  <article class="mt-8 text-white tracking-wider">
+    {!! $post->body !!}
   </article>
 </main>
 
