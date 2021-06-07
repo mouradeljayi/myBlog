@@ -12,9 +12,18 @@ class PostController extends Controller
     {
       $this->middleware('auth')->except(['index', 'show']);
     }
-    public function index()
+    public function index(Request $request)
     {
-      $posts = Post::latest()->get();
+      $keyword = isset($request->keyword) && $request->keyword != '' ? $request->keyword : null;
+
+      $posts = Post::orderBy('created_at', 'desc');
+
+      if(!is_null($keyword)) {
+        $posts = $posts->search($keyword, null, true);
+      }
+
+      $posts = $posts->get();
+
       return view('posts.index', compact('posts'));
     }
 
@@ -63,17 +72,9 @@ class PostController extends Controller
         $post = Post::create($data);
 
         if ($post) {
-            return redirect()->route('posts.show', $post)->with([
-                'message' => "post created successfully",
-                'alert-type' => 'success'
-            ]);
+            return redirect()->route('posts.show', $post)
+                             ->with('success', 'Post Created successfully');
         }
-
-        return redirect()->route('posts.index')->with([
-            'message' => __('posts.something_was_wrong'),
-            'alert-type' => 'danger'
-        ]);
-
     }
 
     public function edit($post)
@@ -119,16 +120,9 @@ class PostController extends Controller
         $update = $post->update($data);
 
         if ($update) {
-            return redirect()->route('posts.show', $post)->with([
-                'message' => __('posts.updated_successfully'),
-                'alert-type' => 'success'
-            ]);
+            return redirect()->route('posts.show', $post)
+                             ->with('success', 'Post Updated successfully');
         }
-
-        return redirect()->route('posts.index')->with([
-            'message' => __('posts.something_was_wrong'),
-            'alert-type' => 'danger'
-        ]);
     }
 
     public function destroy($post)
@@ -139,17 +133,9 @@ class PostController extends Controller
        $post->delete();
 
         if ($post) {
-            return redirect()->route('posts.index')->with([
-                'message' => __('posts.deleted_successfully'),
-                'alert-type' => 'success'
-            ]);
+            return redirect()->route('dashboard')
+                             ->with('success', 'Post deleted successfully');
         }
-
-        return redirect()->route('posts.index')->with([
-            'message' => __('posts.something_was_wrong'),
-            'alert-type' => 'danger'
-        ]);
-
     }
 
 }

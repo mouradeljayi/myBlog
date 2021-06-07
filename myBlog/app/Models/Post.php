@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Post extends Model
 {
-    use HasFactory, HasTranslations, Sluggable;
+    use HasFactory, HasTranslations, Sluggable, SearchableTrait;
 
     protected $guarded = [];
 
@@ -29,6 +30,13 @@ class Post extends Model
             ]
         ];
     }
+
+    protected $searchable = [
+      'columns' => [
+        'title' => 10,
+        'body' => 10,
+      ]
+    ];
 
     public function getTitleenAttribute()
     {

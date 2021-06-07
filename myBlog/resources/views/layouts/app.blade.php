@@ -90,9 +90,10 @@
               </div>
 
               <!--Body-->
-              <form class="flex mt-4 lg:mt-0">
-                <input type="text" class="border border-green-500 py-2 px-2 w-80 lg:w-96 focus:outline-none focus:border-green-600">
-                <button class="border-t border-r border-b border-green-500 py-1 px-6 bg-green-500 hover:bg-green-600 focus:outline-none"> <i class="fas fa-search text-gray-900"></i> </button>
+              <form action="{{ route('posts.index') }}" method="get" class="flex mt-4 lg:mt-0">
+                @csrf
+                <input type="text" name="keyword" value="{{ old('keyword', request()->input('keyword')) }}" class="border border-green-500 py-2 px-2 w-80 lg:w-96 focus:outline-none focus:border-green-600">
+                <button type="submit" class="border-t border-r border-b border-green-500 py-1 px-6 bg-green-500 hover:bg-green-600 focus:outline-none"> <i class="fas fa-search text-gray-900"></i> </button>
               </form>
 
             </div>

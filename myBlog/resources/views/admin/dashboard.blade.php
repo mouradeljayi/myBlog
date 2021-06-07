@@ -3,6 +3,11 @@
 @section('content')
 
 <main class="container mx-auto px-8 mt-28">
+  @if ($message = Session::get('success'))
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mb-4 rounded relative">
+       <span class="block sm:inline">{{ $message }}</span>
+     </div>
+  @endif
   <div class="flex justify-between items-center">
     <h1 class="text-2xl uppercase text-green-500">Dashboard </h1>
     <a href="{{ route('posts.create') }}" class="bg-green-500 py-1 px-4 border border-green-500 text-gray-200 hover:bg-green-600">Add post</a>

@@ -8,12 +8,12 @@
       <p>Created with <i class="fas fa-heart fa-sm text-red-500"></i> by Mourad EL Jayi | 2021</p>
     </div>
     <div class="flex text-green-500 mt-4">
-      <a href="#"> <i class="fab fa-facebook fa-lg ml-4"></i> </a>
-      <a href="#"> <i class="fab fa-twitter fa-lg ml-4"></i> </a>
-      <a href="#"> <i class="fab fa-instagram fa-lg ml-4"></i> </a>
-      <a href="#"> <i class="fas fa-envelope fa-lg ml-4"></i> </a>
-      <a href="#"> <i class="fab fa-linkedin fa-lg ml-4"></i> </a>
-      <a href="#"> <i class="fab fa-github fa-lg ml-4"></i> </a>
+      <a href="https://www.facebook.com/mourad.eljayi/" target="_blank"> <i class="fab fa-facebook fa-lg ml-4"></i> </a>
+      <a href="https://www.twitter.com/mouradeljayi" target="_blank"> <i class="fab fa-twitter fa-lg ml-4"></i> </a>
+      <a href="https://www.instagram.com/muradelj" target="_blank"> <i class="fab fa-instagram fa-lg ml-4"></i> </a>
+      <a href = "mailto:mouradeljayi98@gmail.com"> <i class="fas fa-envelope fa-lg ml-4"></i> </a>
+      <a href="https://www.linkedin.com/in/mouradeljayi/" target="_blank"> <i class="fab fa-linkedin fa-lg ml-4"></i> </a>
+      <a href="https://www.github.com/mouradeljayi" target="_blank"> <i class="fab fa-github fa-lg ml-4"></i> </a>
     </div>
   </section>
 </footer>

@@ -5,6 +5,7 @@ return [
     'latest_posts'          => 'Derniers articles',
     'title'                 => 'Titre',
     'body'                  => 'contenu',
+    'no_posts'              => 'Aucun article pour le moment !',
     'search'                => 'Chercher un article',
     'all_posts'             => 'Tous les articles',
     'home'                  => 'Accueil',

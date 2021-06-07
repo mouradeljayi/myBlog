@@ -21,7 +21,7 @@
     </div>
   @else
     <section class="mt-20 text-white text-center text-2xl">
-      NO POSTS FOR THE MOMENT !
+    {{ __('posts.no_posts') }}
     </section>
   @endif
 </main>

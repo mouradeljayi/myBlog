@@ -20,7 +20,7 @@ use App\Models\Post;
 
 Route::get('/', function () {
     $last_post = Post::latest()->first();
-    $posts = Post::latest()->take(4)->get();
+    $posts = Post::latest()->skip(1)->take(4)->get();
     return view('welcome', [
       'posts' => $posts,
       'last_post' => $last_post

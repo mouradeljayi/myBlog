@@ -5,6 +5,7 @@ return [
   'latest_posts'          => 'Latest posts',
   'title'                 => 'Title',
   'body'                  => 'Body',
+  'no_posts'              => 'No posts for the moment !',
   'search'                => 'Search for a post',
   'all_posts'             => 'All postes',
   'home'                  => 'Home',

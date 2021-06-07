@@ -37,7 +37,7 @@
     </section>
   @else
     <section class="mt-20 text-white text-center">
-      NO POSTS FOR THE MOMENT !
+      {{ __('posts.no_posts') }}
     </section>
   @endif
 
