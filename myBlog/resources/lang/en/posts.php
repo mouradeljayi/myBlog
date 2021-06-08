@@ -11,6 +11,9 @@ return [
   'home'                  => 'Home',
   'blog'                  => 'Blog',
   'about'                 => 'About',
+  'about_page'            => 'I created this blog for the purpose of publishing informative and educational content about programming, in particular Web Development as simple and professional as possible, far from monopoly, misconceptions and misleading approaches. I also try to present articles in three different languages: English, Arabic and French to expand the reader base.
+                              I hope you find this blog useful and I hope that I have provided you with some of my modest knowledge.
+                              Welcome to my personal blog at any time..',
   'contact'               => 'Contact',
   'show_more'             => 'Show more',
   'read_post'             => 'Read the post',

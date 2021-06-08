@@ -11,6 +11,9 @@ return [
     'home'                  => 'Accueil',
     'blog'                  => 'Blog',
     'about'                 => 'A propos',
+    'about_page'            => "J'ai créé ce blog afin de publier du contenu informatif et éducatif sur la programmation, en particulier le développement Web aussi simple et professionnel que possible, loin du monopole, des idées fausses et des méthodes trompeuses. J'essaie également de présenter des articles en trois langues différentes : anglais, arabe et français pour élargir la base de lecteurs.
+                                J'espère que ce blog vous sera utile et j'espère vous avoir apporté une partie de mes modestes connaissances.
+                                Bienvenue sur mon blog personnel à tout moment..",
     'contact'               => 'Contact',
     'show_more'             => 'Afficher plus',
     'read_post'             => 'Lire l\'article',
