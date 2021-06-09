@@ -15,6 +15,10 @@ return [
                                 J'espère que ce blog vous sera utile et j'espère vous avoir apporté une partie de mes modestes connaissances.
                                 Bienvenue sur mon blog personnel à tout moment..",
     'contact'               => 'Contact',
+    'contact_page'          => "Je m'appelle < Mourad EL Jayi > et je suis le créateur de ce blog. Je suis un étudiant et développeur web titulaire d'une licence en sciences mathématiques et Informatique (SMI), spécialisé dans les différents outils de l’écosystème du Framework Laravel ainsi que Vue JS.
+                                Je suis passionné par le monde de la technologie en particulier le domaine du développement web.
+                                J’aime bien également aider et partager mes connaissances avec les autres.
+                                Je me consacre toujours à améliorer mes compétences et à maîtriser des nouvelles technologies. Vous pouvez me contactez sur mes différents comptes de réseaux sociaux ci-dessous :",
     'show_more'             => 'Afficher plus',
     'read_post'             => 'Lire l\'article',
     'chevron'               => 'fa-chevron-right',

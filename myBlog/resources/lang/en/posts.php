@@ -15,6 +15,10 @@ return [
                               I hope you find this blog useful and I hope that I have provided you with some of my modest knowledge.
                               Welcome to my personal blog at any time..',
   'contact'               => 'Contact',
+  'contact_page'          => "My name is < Mourad EL Jayi > and I'm the creator of this blog. I'm a student and a web developer with a bachelor's degree in mathematics and computer sciences, specializing in the various tools of the Laravel Framework ecosystem as well as Vue JS.
+                              I am passionate about the world of technology especially the field of web development.
+                              I also enjoy helping and sharing my knowledge with others.
+                              I am always dedicated to improving my skills and mastering new technologies. You can contact me on my different social media accounts below :",
   'show_more'             => 'Show more',
   'read_post'             => 'Read the post',
   'chevron'               => 'fa-chevron-right',

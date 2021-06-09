@@ -2,14 +2,14 @@
 
 @section('content')
 
-<main class="container mx-auto px-8 mt-28">
+<main class="container mx-auto px-8 mt-28 mb-40">
   @if ($message = Session::get('success'))
     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mb-4 rounded relative">
        <span class="block sm:inline">{{ $message }}</span>
      </div>
   @endif
   <div class="flex justify-between items-center">
-    <h1 class="text-2xl uppercase text-green-500">Dashboard </h1>
+    <h1 class="text-lg md:text-2xl uppercase text-green-500">Dashboard </h1>
     <a href="{{ route('posts.create') }}" class="bg-green-500 py-1 px-4 border border-green-500 text-gray-200 hover:bg-green-600">Add post</a>
     <a href="{{ route('logout') }}" class="bg-green-500 py-1 px-4 border border-green-500 text-gray-200 hover:bg-green-600">Logout</a>
   </div>
@@ -45,13 +45,9 @@
           </tbody>
       </table>
   </div>
-{{-- <div class="bg-gray-200 mt-40 container mx-auto px-20 p-20 flex justify-center">
-  <div class="mt-4 border-2 border-green-500 p-10 relative">
-    <i class="fas fa-graduation-cap absolute right-4 top-6 rotation-icon text-green-600 fa-2x"></i>
-    <a href="/" class="text-5xl font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi <i class="fas fa-ellipsis-v fa-lg"></i> <span class="text-green-600 text-6xl">Blog</span> </a>
-  </div>
+<div class="mt-10">
+  {{ $posts->links() }}
 </div>
- --}}
 
 </main>
 

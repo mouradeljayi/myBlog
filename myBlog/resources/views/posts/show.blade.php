@@ -8,7 +8,7 @@
         <span class="block sm:inline">{{ $message }}</span>
       </div>
    @endif
-  <h2 class="text-white text-2xl md:text-3xl mt-4">{{ $post->title }}</h2>
+  <h2 class="text-white text-xl md:text-3xl mt-4">{{ $post->title }}</h2>
   <img src="{{ asset('/images/posts/' . $post->image) }}" class="mt-6" alt="{{ $post->title }}">
   <div class="flex text-green-500 mt-2">
     <small><i class="fas fa-user-edit"></i> Mourad EL Jayi</small> <i class="fas fa-ellipsis-v ml-4 mr-4"></i>

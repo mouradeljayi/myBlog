@@ -23,9 +23,8 @@
     <body class="bg-gray-800">
         <div class="w-full text-gray-700 bg-gray-200 shadow-lg fixed inset-x-0 top-0 z-20">
           <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-            <div class="p-4 flex flex-row items-center justify-between relative">
-              <i class="fas fa-graduation-cap absolute {{ config('locales.languages')[app()->getLocale()]['name'] === 'الدارجة' ? 'right-0' : ' right-40' }} md:right-0 top-3 rotation-icon text-green-600"></i>
-              <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi <i class="fas fa-ellipsis-v"></i> <span class="text-green-600 text-xl">Blog</span> </a>
+            <div class="p-4 flex flex-row items-center justify-between">
+              <a href="/" class="text-base md:text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Mourad ELJayi <i class="fas fa-ellipsis-v"></i> <span class="text-green-600 text-lg md:text-xl">Blog</span> </a>
               <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                   <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>

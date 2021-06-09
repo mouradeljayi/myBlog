@@ -22,7 +22,7 @@ class PostController extends Controller
         $posts = $posts->search($keyword, null, true);
       }
 
-      $posts = $posts->get();
+      $posts = $posts->paginate(9);
 
       return view('posts.index', compact('posts'));
     }

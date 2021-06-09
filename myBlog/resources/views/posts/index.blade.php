@@ -11,9 +11,9 @@
         <div class="shadow-lg transform hover:scale-90">
           <img src="{{ asset('/images/posts/' . $post->image) }}" alt="{{ $post->title }}">
           <div class="bg-gray-200 p-4">
-            <h4 class="text-xl font-bold">{{ $post->title }}</h4>
+            <h4 class="text-lg font-bold">{{ $post->title }}</h4>
             <h6 class="text-sm mt-4"><i class="fas fa-user-edit"></i> {{ __('posts.author') }}</h6>
-            <small class="text-sm"><i class="fas fa-clock"></i> {{ $post->created_at->diffForHumans() }}</small>
+            <h6 class="text-sm"><i class="fas fa-clock"></i> {{ $post->created_at->diffForHumans() }}</h6>
           </div>
         </div>
       </a>
@@ -24,6 +24,9 @@
     {{ __('posts.no_posts') }}
     </section>
   @endif
+  <div class="mt-10">
+    {{ $posts->links() }}
+  </div>
 </main>
 
 @endsection
