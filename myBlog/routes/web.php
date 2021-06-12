@@ -30,7 +30,7 @@ Route::get('/', function () {
 Route::get('/change-language/{locale}', [LocaleController::class, 'switch'])->name('switchLang');
 
 Route::group(['middleware' => 'web'], function () {
-  
+
   Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
 
   Route::get('/about', function () {
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 // admin routes
-Route::get('/zoroDashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-Route::get('/admin/zoro/signIn', [AuthController::class, 'login'])->name('login')->middleware('guest');
-Route::post('/admin/zoro/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
+Route::get('', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::post('', [AuthController::class, 'authenticate'])->name('authenticate');
